@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.25.0/build/global/luxon.min.js"></script>
+    <script src="index.js"></script>
+    <script src="timezone-list.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+</head>
+<body>
+    <h1>International Meeting Scheduler</h1>
+    <p>Have you ever encountered the difficulties of scheduling 
+        a meeting with people from all over the world. Or what about
+        when you thought you had finally found the perfect time and 
+        all of a sudden you're approaching Daylight Savings Time and 
+        the confusion starts all over again. 
+    </p>
+
+    <p>Well, funny enough, not only is this a difficult coordination
+        problem, it is also a hard problem to solve technically.</p>
+
+    <p>If you have been spending way too much time lately on the couch
+        watching Netflix and want to give your brain a workout 
+        or you are a bit of a nerd like me and find everything complicated 
+        just one more challenge you must undertake, you can read 
+        <a href="https://toastui.medium.com/handling-time-zone-in-javascript-547e67aa842d">this</a>
+    </p>
+    <p>And if you want to get straight to the punchline and schedule 
+        a meeting I don't blame you one bit.....
+    </p>
+    <p>The reason why the problem is difficult is because not only 
+        do many countries have multiple timezones within it, many
+        timezones change for summer hours. And this is a big world 
+        and therefore a big list of if/else statements..... but thankfully
+        there is a library called <a href="https://momentjs.com/timezone/docs/moment-timezone.">moment-timezone</a> 
+    </p>
+    <div>
+        <h2>Find a Meeting time that works for everyone</h2>
+        <div>
+            <h3>A time that works for me: </h3>
+            <input type="datetime-local" id="meeting-datetime"/>
+        </div>
+        <div>
+            <h3>Timezones I'm coordinating with:</h3>
+            <ul id="timezone-list"></ul>
+            <select name="timezone" id="timezone" onclick="createOptions()"></select>
+            <button onclick="addItem()">add item</button>
+            <button onclick="removeItem()">remove item</button>
+        </div>
+    </div>
+
+</body>
+</html>
